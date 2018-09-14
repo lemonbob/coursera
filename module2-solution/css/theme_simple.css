@@ -1,5 +1,5 @@
 /* Module2 theme.css */
-/* Flexbox is a better solution than percent positioning of relative elements because
+/* Flexbox is a better solution than percent positioning of elements because
 the text in each box for a real-life situation is not "lorem ipsum". Normal box layout
 would result in different height divs depending on box text. It is possible to use
 Javascript to keep all boxes the same height with an ordinary layout, but this was
