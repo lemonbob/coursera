@@ -1,0 +1,90 @@
+/* Module2 theme.css */
+/* Flexbox is a better solution than percent positioning of relative elements because
+the text in each box for a real-life situation is not "lorem ipsum". Normal box layout
+would result in different height divs depending on box text. It is possible to use
+Javascript to keep all boxes the same height with an ordinary layout, but this was
+not allowed in the assignment instructions*/
+
+/*css reset add box-sizing border-box to all elements*/
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font-family: 'Josefin Sans', sans-serif;
+  vertical-align: baseline;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+
+h1{
+  font-size: 1.75em;
+  text-align: center;
+  margin:40px 0px;
+}
+
+.flex_container {
+  position:relative;
+  display:flex;
+  flex-wrap: wrap;
+  width:100%;
+  box-flex:1;
+  box-orient: horizontal;
+  justify-content:center; /*aligns all the flexboxes evenly. Space-evenly is not as well supported as center but is better as margins need not be set*/
+}
+
+/*boxes items of flexblox*/
+.boxes{
+  width:30%;/*could use flex-basis instead but in this context there is no difference*/
+  background: #77f;
+  border: 1px black solid;
+  padding:10px;
+  margin:20px 1.6% 20px 1.6%;
+  text-align: center;
+}
+
+/*make sure the text in the boxes can't float next to the menusubheader*/
+.boxes > p{
+  clear:both;
+  font-size: 1em;
+}
+
+/*define general style for menusubheaders*/
+.menuheader{
+  position:relative;
+  display:block;
+  float:right;
+  border: 1px black solid;
+  font-size: 1.25em;
+  text-align: center;
+  box-sizing: content-box;
+  padding: 10px 30px;
+  background: #f7c;
+  left:11px;
+  top:-11px;
+}
+
+
+/*modified styles for nth children of this header type*/
+.boxes:nth-of-type(2) > .menuheader{
+  background: #f00;
+  color:#fff;
+}
+.boxes:nth-of-type(3) > .menuheader{
+  background: #ff0;
+}
+
+
+/*media queries for browser widths - we should probably have a different query for
+portait versus landscape for mobiles but this was not part of the assignment.
+Landscape tablet is 1024px wide and will take styles from original i.e. desktop*/
+@media screen and (max-width: 991px){
+  .boxes:nth-of-type(-n+2) {width:46.7%;}
+  .boxes:nth-of-type(3) {width:96.6%;}
+}
+
+@media screen and (max-width: 767px){
+  .boxes:nth-of-type(n) {width:85%;}
+}
