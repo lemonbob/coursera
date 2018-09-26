@@ -106,12 +106,10 @@ a:link, a:visited a:hover, a:active{
 
 #banner_wrapper h1{
   position:absolute;
-  top:0;
-  left:50%;
-  width:50%;
+  width:100%;
+  top:0px;
   color:white;
   font-size: 1.75em;
-  margin-left:-25%;
 }
 
 .fil0 {
